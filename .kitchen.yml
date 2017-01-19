@@ -1,0 +1,19 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+    
+platforms:
+  - name: ubuntu-14.04
+
+suites:
+  - name: default
+    provisioner:
+      solo_rb:
+        node_name: git      
+  
+    run_list:
+      - recipe[git::default]
+    attributes:
