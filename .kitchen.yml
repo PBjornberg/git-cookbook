@@ -10,10 +10,10 @@ platforms:
 
 suites:
   - name: default
-    provisioner:
-      solo_rb:
-        node_name: git      
-  
     run_list:
       - recipe[git::default]
+    attributes:
+  - name: server
+    run_list:
+      - recipe[git::server]
     attributes:
